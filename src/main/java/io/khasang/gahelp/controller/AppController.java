@@ -38,6 +38,15 @@ public class AppController {
         return "cat";
     }
 
+    @RequestMapping("/admin")
+    public String getAdminPage() {
+        return "admin";
+    }
+    @RequestMapping("/user")
+    public String getUserPage(){
+        return "user";
+    }
+
     @RequestMapping("/create")
     public String getTableCreationStatus(Model model) {
         model.addAttribute("status", createTable.tableCreationStatus());
