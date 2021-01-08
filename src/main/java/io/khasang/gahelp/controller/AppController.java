@@ -4,6 +4,8 @@ import io.khasang.gahelp.model.Cat;
 import io.khasang.gahelp.model.CreateTable;
 import io.khasang.gahelp.service.KnightService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,10 +22,18 @@ public class AppController {
         return "status";
     }
 
+//    @Secured("ROLE_ADMIN")
     @RequestMapping("/hello/{name}")
     public String getHelloPage(@PathVariable("name") String name, Model model) {
         model.addAttribute("name", name);
         return "hello";
+    }
+
+    @RequestMapping("/password/{password}")
+    public String getEncryptPassword(@PathVariable("password") String password, Model model) {
+        model.addAttribute("password",password);
+        model.addAttribute("passwordAfterEncode",new BCryptPasswordEncoder().encode(password));
+        return "password";
     }
 
     @RequestMapping("/knight/fight/{enemy}")

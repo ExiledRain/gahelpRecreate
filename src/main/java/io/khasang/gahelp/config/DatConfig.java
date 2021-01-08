@@ -18,6 +18,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource(value = "classpath:util.properties")
+@PropertySource(value = "classpath:auth.properties")
 public class DatConfig {
     private Environment environment;
 
@@ -58,8 +59,8 @@ public class DatConfig {
     public UserDetailsService userDetailsService() {
         JdbcDaoImpl dao = new JdbcDaoImpl();
         dao.setDataSource(dataSource());
-        dao.setUsersByUsernameQuery("");
-        dao.setAuthoritiesByUsernameQuery("");
+        dao.setUsersByUsernameQuery(environment.getRequiredProperty("usersByQuery"));
+        dao.setAuthoritiesByUsernameQuery(environment.getRequiredProperty("rolesByQuery"));
         return dao;
     }
 

@@ -1,5 +1,5 @@
-io/khasang/gahelp/config/security/SecurityConfig.java
- io.khasang.gahelp.config.security.SecurityConfig
+io/khasang/gahelp/model/impl/CreateTableImpl.java
+ io.khasang.gahelp.model.impl.CreateTableImpl
 io/khasang/gahelp/model/CreateTable.java
  io.khasang.gahelp.model.CreateTable
 io/khasang/gahelp/Application.java
@@ -14,11 +14,11 @@ io/khasang/gahelp/service/impl/KnightServiceImpl.java
  io.khasang.gahelp.service.impl.KnightServiceImpl
 io/khasang/gahelp/config/AppConfig.java
  io.khasang.gahelp.config.AppConfig
-io/khasang/gahelp/controller/AppController.java
- io.khasang.gahelp.controller.AppController
-io/khasang/gahelp/model/impl/CreateTableImpl.java
- io.khasang.gahelp.model.impl.CreateTableImpl
 io/khasang/gahelp/service/KnightService.java
  io.khasang.gahelp.service.KnightService
+io/khasang/gahelp/config/security/SecurityConfig.java
+ io.khasang.gahelp.config.security.SecurityConfig
+io/khasang/gahelp/controller/AppController.java
+ io.khasang.gahelp.controller.AppController
 io/khasang/gahelp/config/DatConfig.java
  io.khasang.gahelp.config.DatConfig
