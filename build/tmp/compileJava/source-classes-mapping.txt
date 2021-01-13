@@ -1,9 +1,15 @@
 io/khasang/gahelp/config/security/SecurityConfig.java
  io.khasang.gahelp.config.security.SecurityConfig
-io/khasang/gahelp/service/KnightService.java
- io.khasang.gahelp.service.KnightService
+io/khasang/gahelp/jpa/HibernateConfig.java
+ io.khasang.gahelp.jpa.HibernateConfig
+io/khasang/gahelp/dao/HorseDao.java
+ io.khasang.gahelp.dao.HorseDao
+io/khasang/gahelp/service/HorseService.java
+ io.khasang.gahelp.service.HorseService
 io/khasang/gahelp/service/impl/KnightServiceImpl.java
  io.khasang.gahelp.service.impl.KnightServiceImpl
+io/khasang/gahelp/controller/HorseController.java
+ io.khasang.gahelp.controller.HorseController
 io/khasang/gahelp/config/AppConfig.java
  io.khasang.gahelp.config.AppConfig
 io/khasang/gahelp/controller/AppController.java
@@ -22,7 +28,15 @@ io/khasang/gahelp/aspect/Bard.java
  io.khasang.gahelp.aspect.Bard
 io/khasang/gahelp/config/security/SecurityInit.java
  io.khasang.gahelp.config.security.SecurityInit
+io/khasang/gahelp/dao/impl/HorseDaoImpl.java
+ io.khasang.gahelp.dao.impl.HorseDaoImpl
 io/khasang/gahelp/entity/Horse.java
  io.khasang.gahelp.entity.Horse
-io/khasang/gahelp/jpa/HibernateConfig.java
- io.khasang.gahelp.jpa.HibernateConfig
+io/khasang/gahelp/dao/BasicDao.java
+ io.khasang.gahelp.dao.BasicDao
+io/khasang/gahelp/service/KnightService.java
+ io.khasang.gahelp.service.KnightService
+io/khasang/gahelp/dao/impl/BasicDaoImpl.java
+ io.khasang.gahelp.dao.impl.BasicDaoImpl
+io/khasang/gahelp/service/impl/HorseServiceImpl.java
+ io.khasang.gahelp.service.impl.HorseServiceImpl
