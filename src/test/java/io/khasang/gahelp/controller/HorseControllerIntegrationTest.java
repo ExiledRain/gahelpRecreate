@@ -1,23 +1,34 @@
 package io.khasang.gahelp.controller;
 
 import io.khasang.gahelp.entity.Horse;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-
+@RunWith(SpringJUnit4ClassRunner.class)
 public class HorseControllerIntegrationTest {
     private static final String ROOT = "http://localhost:8080/horse";
     private static final String ADD = "/add";
     private static final String ALL = "/all";
     private static final String GET = "/get";
     private static final String DELETE = "/delete";
+
+    @Test
+    public void testHomePage() throws Exception {
+        AppController controller = new AppController();
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+        mockMvc.perform(MockMvcRequestBuilders.get("/")).andExpect(MockMvcResultMatchers.view().name("status"));
+    }
 
     @Test
     public void checkHorseAdd() {
@@ -31,9 +42,9 @@ public class HorseControllerIntegrationTest {
                 Horse.class,
                 risak.getId()
         );
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        Assert.assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         Horse receivedHorse = responseEntity.getBody();
-        assertNotNull(receivedHorse);
+        Assert.assertNotNull(receivedHorse);
     }
 
     @Test
@@ -50,7 +61,7 @@ public class HorseControllerIntegrationTest {
                 }
         );
         List<Horse> horses = responseEntity.getBody();
-        assertNotNull(horses);
+        Assert.assertNotNull(horses);
     }
 
     private Horse createHorse() {
@@ -66,8 +77,8 @@ public class HorseControllerIntegrationTest {
                 entity,
                 Horse.class).getBody();
 
-        assertNotNull(createdHorse);
-        assertEquals("Risak", createdHorse.getName());
+        Assert.assertNotNull(createdHorse);
+        Assert.assertEquals("Risak", createdHorse.getName());
         return createdHorse;
     }
 
