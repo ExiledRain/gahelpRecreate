@@ -1,29 +1,16 @@
 package io.khasang.gahelp.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "horses")
-public class Horse {
+@Table(name = "mares")
+public class Mare {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
     private String description;
-
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<Mare> mares = new ArrayList<>();
-
-    public List<Mare> getMares() {
-        return mares;
-    }
-
-    public void setMares(List<Mare> mares) {
-        this.mares = mares;
-    }
 
     public long getId() {
         return id;

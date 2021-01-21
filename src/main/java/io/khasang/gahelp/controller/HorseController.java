@@ -38,7 +38,7 @@ public class HorseController {
         return horseServiсe.delete(id);
     }
 
-    @RequestMapping(value = "/update/{id}",method = RequestMethod.PUT,produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/update",method = RequestMethod.PUT,produces = "application/json;charset=utf-8")
     @ResponseBody
     public Horse updateById(@RequestBody Horse horse) {
         return horseServiсe.update(horse);

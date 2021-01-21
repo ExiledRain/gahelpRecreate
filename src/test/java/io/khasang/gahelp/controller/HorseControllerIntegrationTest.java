@@ -1,6 +1,7 @@
 package io.khasang.gahelp.controller;
 
 import io.khasang.gahelp.entity.Horse;
+import io.khasang.gahelp.entity.Mare;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +14,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -86,6 +88,20 @@ public class HorseControllerIntegrationTest {
         Horse horse = new Horse();
         horse.setName("Risak");
         horse.setDescription("fast");
+
+        Mare mare1 = new Mare();
+        mare1.setName("Queen");
+        mare1.setDescription("Obstinate");
+
+        Mare mare2 = new Mare();
+        mare2.setName("Burenka");
+        mare2.setDescription("sweet");
+
+        List<Mare> list = new ArrayList<>();
+        list.add(mare1);
+        list.add(mare2);
+
+        horse.setMares(list);
         return horse;
     }
 }
