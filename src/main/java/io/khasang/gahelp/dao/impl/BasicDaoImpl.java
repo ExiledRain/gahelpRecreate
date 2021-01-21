@@ -52,7 +52,7 @@ public class BasicDaoImpl<T> implements BasicDao<T> {
         return entity;
     }
 
-    private Session getSession() {
+    protected Session getSession() {
         return sessionFactory.getCurrentSession();
     }
 

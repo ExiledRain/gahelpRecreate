@@ -39,4 +39,11 @@ public interface HorseService {
      * @param horse - specific horse for the update
      * */
     Horse update(Horse horse);
+
+    /**
+    * Service to get horses by name
+     * @param name - specific name of horse for search
+     * @return all horses by name
+    * */
+    List<Horse> getByName(String name);
 }

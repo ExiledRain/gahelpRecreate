@@ -37,6 +37,11 @@ public class HorseServiceImpl implements HorseService {
         return horseDao.update(horse);
     }
 
+    @Override
+    public List<Horse> getByName(String name) {
+        return horseDao.getByName(name);
+    }
+
     @Autowired
     public void setHorseDao(HorseDao horseDao) {
         this.horseDao = horseDao;

@@ -44,6 +44,12 @@ public class HorseController {
         return horseServiсe.update(horse);
     }
 
+    @RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Horse> getHorsesByName(@PathVariable("name") String name) {
+        return horseServiсe.getByName(name);
+    }
+
     @Autowired
     public void setHorseServiсe(HorseService horseServiсe) {
         this.horseServiсe = horseServiсe;
