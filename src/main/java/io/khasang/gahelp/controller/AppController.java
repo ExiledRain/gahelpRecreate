@@ -3,6 +3,7 @@ package io.khasang.gahelp.controller;
 import io.khasang.gahelp.model.Cat;
 import io.khasang.gahelp.model.CreateTable;
 import io.khasang.gahelp.service.KnightService;
+import io.khasang.gahelp.util.CheckText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +17,7 @@ public class AppController {
     private Cat cat;
     private KnightService knightService;
     private CreateTable createTable;
+    private CheckText checkText;
 
     @RequestMapping("/")
     public String getStatus() {
@@ -39,6 +41,12 @@ public class AppController {
         model.addAttribute("password",password);
         model.addAttribute("passwordAfterEncode",new BCryptPasswordEncoder().encode(password));
         return "password";
+    }
+
+    @RequestMapping("/check/{text}")
+    public String getCheckResult(@PathVariable String text,Model model){
+        model.addAttribute("result", checkText.checkText(text));
+        return "check";
     }
 
     @RequestMapping("/knight/fight/{enemy}")
@@ -106,5 +114,10 @@ public class AppController {
     @Autowired
     public void setCreateTable(CreateTable createTable) {
         this.createTable = createTable;
+    }
+
+    @Autowired
+    public void setCheckText(CheckText checkText) {
+        this.checkText = checkText;
     }
 }
