@@ -52,12 +52,15 @@ dependencies {
     compile group: 'org.springframework.security', name: 'spring-security-config', version: '5.1.5.RELEASE'
 
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.0.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher
-    testCompile group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.7.0'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.6.2'
 // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine
-    testCompile group: 'org.junit.platform', name: 'junit-platform-engine', version: '1.7.0'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-engine', version: '1.6.0'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testCompile group: 'org.testng', name: 'testng', version: '6.9.13.6'
+
 
 //    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.6.1")
 //    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.1")
